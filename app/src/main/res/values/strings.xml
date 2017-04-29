@@ -1,7 +1,12 @@
 <resources>
     <string name="app_name">YuantaBonus</string>
     <string name="title_activity_main">MainActivity</string>
-    <string name="title_home">Home</string>
+    <string name="title_shopping_cart">紅利好康</string>
+    <string name="title_account_balance">我的點數</string>
+    <string name="title_home">首頁</string>
     <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_notifications">通知</string>
+    <string name="title_webView">網頁版</string>
+    <string name="title_settings">設定</string>
+
 </resources>
