@@ -23,7 +23,10 @@ public class MainActivity extends AppCompatActivity {
                     mTextMessage.setText(R.string.title_shopping_cart);
                     return true;
                 case R.id.navigation_account_balance:
-                    mTextMessage.setText(R.string.title_home);
+                    mTextMessage.setText(R.string.title_account_balance);
+                    return true;
+                case R.id.navigation_notifications:
+                    mTextMessage.setText(R.string.title_notifications);
                     return true;
                 case R.id.navigation_webView:
                     Intent intent = new Intent();
@@ -31,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                     return true;
                 case R.id.navigation_settings:
-                    mTextMessage.setText(R.string.title_notifications);
+                    mTextMessage.setText(R.string.title_settings);
                     return true;
             }
             return false;
