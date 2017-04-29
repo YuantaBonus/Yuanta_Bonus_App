@@ -7,9 +7,9 @@
         android:title="@string/title_shopping_cart" />
 
     <item
-        android:id="@+id/navigation_account_balance"
+        android:id="@+id/navigation_accounts"
         android:icon="@drawable/ic_account_balance_black_24dp"
-        android:title="@string/title_account_balance" />
+        android:title="@string/title_account" />
 
     <item
         android:id="@+id/navigation_notifications"
