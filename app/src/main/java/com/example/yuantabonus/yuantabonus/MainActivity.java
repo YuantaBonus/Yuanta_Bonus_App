@@ -1,5 +1,6 @@
 package com.example.yuantabonus.yuantabonus;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -18,13 +19,18 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
-                case R.id.navigation_home:
+                case R.id.navigation_shopping_cart:
+                    mTextMessage.setText(R.string.title_shopping_cart);
+                    return true;
+                case R.id.navigation_account_balance:
                     mTextMessage.setText(R.string.title_home);
                     return true;
-                case R.id.navigation_dashboard:
-                    mTextMessage.setText(R.string.title_dashboard);
+                case R.id.navigation_webView:
+                    Intent intent = new Intent();
+                    intent.setClass(MainActivity.this  , Webview.class);
+                    startActivity(intent);
                     return true;
-                case R.id.navigation_notifications:
+                case R.id.navigation_settings:
                     mTextMessage.setText(R.string.title_notifications);
                     return true;
             }
@@ -37,8 +43,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //設定隱藏標題
-        //getSupportActionBar().hide();
         //設定隱藏狀態
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
 
