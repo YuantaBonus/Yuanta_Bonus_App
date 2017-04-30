@@ -108,7 +108,6 @@ public class Account extends AppCompatActivity {
                     // balanceOf(address) = "0x70a08231" 取前4個bytes => 0x + 8個字
                     // address = 0x13f42ecb9fbf94ff33cd22828070f2fa10048a27 => 00000000000000000000000013f42ecb9fbf94ff33cd22828070f2fa10048a27
                     //靠右邊開始 往左填滿32bytes
-                    // http://www.rapidtables.com/convert/number/ascii-to-hex.htm 轉address
 
                     OkHttpClient client = new OkHttpClient();
                     final Response response = client.newCall(request).execute();
