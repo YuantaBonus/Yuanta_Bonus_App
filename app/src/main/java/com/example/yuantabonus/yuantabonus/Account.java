@@ -30,7 +30,7 @@ public class Account extends AppCompatActivity {
     OkHttpClient client = new OkHttpClient();
 
     Intent intent = new Intent();
-    TextView TextView_event_log,TextView_balanceOf;
+    TextView TextView_event_log, TextView_balanceOf;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -77,9 +77,9 @@ public class Account extends AppCompatActivity {
         TextView_event_log = (TextView)findViewById(R.id.TextView_event_log);
         TextView_event_log.setMovementMethod(new ScrollingMovementMethod());
 
-
         balanceOf(); //分割成獨立的function
         new_eventFilter(); //分割成獨立的function
+
     }
 
     public void balanceOf(){

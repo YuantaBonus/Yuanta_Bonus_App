@@ -7,10 +7,23 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
 
 public class Notification extends AppCompatActivity {
+
+    TextView msg;
+    private RequestQueue mQueue;
+    private StringRequest getRequest;
+    private Button getmsg;
+    private final static String mUrl = "http://140.113.65.49";
 
     Intent intent = new Intent();
 
@@ -54,6 +67,30 @@ public class Notification extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         navigation.setSelectedItemId(R.id.navigation_notifications);
+
+        msg = (TextView) findViewById(R.id.msg);
+        getmsg = (Button) findViewById(R.id.getmsg);
+        mQueue = Volley.newRequestQueue(this);
+        getRequest = new StringRequest(mUrl,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String s) {
+                        msg.setText(s);
+                    }
+                },
+                new Response.ErrorListener() {
+
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+                        msg.setText(volleyError.getMessage());
+                    }
+                } );
+        getmsg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mQueue.add(getRequest);
+            }
+        });
 
     }
 
