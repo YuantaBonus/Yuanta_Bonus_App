@@ -27,6 +27,8 @@ import okhttp3.Response;
 
 public class Account extends AppCompatActivity {
 
+    OkHttpClient client = new OkHttpClient();
+
     Intent intent = new Intent();
     TextView TextView_event_log,TextView_balanceOf;
 
@@ -109,7 +111,7 @@ public class Account extends AppCompatActivity {
                     // address = 0x13f42ecb9fbf94ff33cd22828070f2fa10048a27 => 00000000000000000000000013f42ecb9fbf94ff33cd22828070f2fa10048a27
                     //靠右邊開始 往左填滿32bytes
 
-                    OkHttpClient client = new OkHttpClient();
+
                     final Response response = client.newCall(request).execute();
                     final String resStr = response.body().string();
                     JSONObject j = new JSONObject(resStr);
@@ -156,7 +158,6 @@ public class Account extends AppCompatActivity {
                             .post(requestBody)
                             .build();
 
-                    OkHttpClient client = new OkHttpClient();
                     final Response response = client.newCall(request).execute();
                     final String resStr = response.body().string();
                     Log.d("resStr: ", ""+resStr);
@@ -204,7 +205,6 @@ public class Account extends AppCompatActivity {
                             .post(requestBody)
                             .build();
 
-                    OkHttpClient client = new OkHttpClient();
                     final Response response = client.newCall(request).execute();
                     final String result_String = response.body().string();
                     Log.d("result_String: ", ""+result_String);
